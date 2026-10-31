@@ -11,7 +11,6 @@
     <Folder Include="Pages\" />
     <Folder Include="Controllers\" />
     <Folder Include="Context\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>
