@@ -8,7 +8,7 @@ namespace API_Alikin
 {
     public class Startup
     {
-        public void ConfigureService(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddSwaggerGen(c =>
@@ -16,6 +16,12 @@ namespace API_Alikin
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
+                    Title = "Руководство для использования запросов",
+                    Description = "полное руководстводля использования запросов находящихся в проекте"
+                });
+                c.SwaggerDoc("v2", new OpenApiInfo
+                {
+                    Version = "v2",
                     Title = "Руководство для использования запросов",
                     Description = "полное руководстводля использования запросов находящихся в проекте"
                 });
@@ -33,6 +39,7 @@ namespace API_Alikin
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Запросы GET");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "Запросы POST");
             });
         }
     }

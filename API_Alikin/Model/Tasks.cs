@@ -3,7 +3,7 @@
     /// <summary>
     /// Задачи
     /// </summary>
-    public class Task
+    public class Tasks
     {
        /// <summary>
        /// Код
