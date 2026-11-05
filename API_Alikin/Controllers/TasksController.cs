@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API_Alikin.Controllers
 {
     [Route("api/TasksController")] // указываем раздел
+    [ApiExplorerSettings(GroupName = "v1")]
     public class TasksController : Controller
     {
 
