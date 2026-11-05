@@ -1,3 +1,5 @@
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,7 +13,8 @@ builder.Services.AddSwaggerGen(option =>
         Title = "Пробная версия"
     });
 
-    String PathFile = Path.Combine(System.AppContext.BaseDirectory, "WebApplication2.xml");
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    String PathFile = Path.Combine(AppContext.BaseDirectory, xmlFile);
     option.IncludeXmlComments(PathFile);
 });
 
