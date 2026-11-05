@@ -107,5 +107,31 @@ namespace API_Alikin.Controllers
                 return StatusCode(500);
             }
         }
+        /// <summary>
+        /// Метод добавления задачи
+        /// </summary>
+        /// <param name="task">Данные о задаче</param>
+        /// <returns>Статус выполнения запроса</returns>
+        /// <remarks>Данный метод добавляет задачу в базу данных</remarks>
+        [Route("Add")]
+        [HttpPut]
+        [ApiExplorerSettings(GroupName = "v3")] // версия документации
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
+        public ActionResult Add([FromForm] Tasks task)
+        {
+            try
+            {
+                TaskContext tasksContext = new TaskContext();
+                tasksContext.Tasks.Add(task);
+                tasksContext.SaveChanges();
+                return StatusCode(200);
+            }
+            catch (Exception exp)
+            {
+                return StatusCode(500);
+            }
+        }
+
     }
 }
