@@ -25,6 +25,12 @@ namespace API_Alikin
                     Title = "Руководство для использования запросов",
                     Description = "полное руководстводля использования запросов находящихся в проекте"
                 });
+                c.SwaggerDoc("v3", new OpenApiInfo
+                {
+                    Version = "v3",
+                    Title = "Руководство для использования запросов",
+                    Description = "полное руководстводля использования запросов находящихся в проекте"
+                });
 
                 var filePath = Path.Combine(System.AppContext.BaseDirectory, "ASP_GET.xml");
                 c.IncludeXmlComments(filePath);
@@ -40,6 +46,7 @@ namespace API_Alikin
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Запросы GET");
                 c.SwaggerEndpoint("/swagger/v2/swagger.json", "Запросы POST");
+                c.SwaggerEndpoint("/swagger/v3/swagger.json", "Запросы PUT");
             });
         }
     }
